@@ -21,7 +21,7 @@ function scan(ps, msg, src) {
 
     // lets check its not one of the files types that are never likely to contain stuff, like pngs and jpegs
     var contentType = msg.getResponseHeader().getHeader("Content-Type")
-    var unwantedFileTypes = ['image/png', 'image/jpeg','image/gif','application/x-shockwave-flash','application/pdf']
+    var unwantedFileTypes = ['image/png', 'image/jpeg','image/gif','application/x-shockwave-flash','application/pdf', 'application/javascript']
 
     if (unwantedFileTypes.indexOf(""+contentType) >= 0) {
         // if we find one of the unwanted headers quit this scan, this saves time and reduces false positives
